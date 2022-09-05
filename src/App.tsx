@@ -1,25 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// Context provider
+import UserContextProvider from "./context/UserContext";
+// Components
+import UserList from "./components/UserList";
+import FilterList from "./components/FilterList";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContextProvider>
+      <div className="bg-gray-800 text-white min-h-screen">
+        <div className="container w-2/5 mx-auto py-10">
+          <FilterList />
+          <UserList />
+        </div>
+      </div>
+    </UserContextProvider>
   );
 }
 
